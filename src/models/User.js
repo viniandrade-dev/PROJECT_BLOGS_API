@@ -7,7 +7,6 @@
         displayName: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
-        email: DataTypes.STRING,
         image: DataTypes.STRING,
     }, 
     {
