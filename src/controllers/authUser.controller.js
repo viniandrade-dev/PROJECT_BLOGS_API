@@ -17,6 +17,13 @@ const authenticateNewUser = async (req, res) => {
     }
 };
 
+const getAllUsers = async (_req, res) => {
+    const users = await authUserService.getAllUsers();
+    
+    return res.status(200).json(users);
+};
+
 module.exports = {
     authenticateNewUser,
+    getAllUsers,
 };

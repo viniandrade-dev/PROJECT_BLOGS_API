@@ -10,11 +10,11 @@ const jwtConfig = {
 
 const generateToken = (payload) => jwt.sign(payload, TOKEN_SECRET, jwtConfig);
 
-const authenticateToken = async (token) => {
+const authenticateToken = (token) => {
     if (!token) throw new Error('Missing token');
 
     try {
-        const decryptedData = await jwt.verify(token, TOKEN_SECRET);
+        const decryptedData = jwt.verify(token, TOKEN_SECRET);
         return decryptedData;
     } catch (error) {
         throw new Error('Token malformed');

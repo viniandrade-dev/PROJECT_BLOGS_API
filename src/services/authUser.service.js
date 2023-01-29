@@ -9,9 +9,19 @@ const authenticateNewUser = async ({ displayName, email, password, image }) => {
     return { token };
 };
 
-const findUserByEmail = (email) => User.findOne({ where: { email } });
+const findUserByEmail = async (email) => {
+  const user = await User.findOne({ where: { email } });
+  return user;
+};
+
+const getAllUsers = async () => {
+    const users = await User.findAll({ attributes: { exclude: ['password'] } });
+
+    return users;
+};
 
 module.exports = {
     authenticateNewUser,
     findUserByEmail,
+    getAllUsers,
 };
