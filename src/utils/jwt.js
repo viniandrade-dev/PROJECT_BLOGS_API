@@ -8,10 +8,7 @@ const jwtConfig = {
     algorithm: 'HS256',
 };
 
-const generateToken = ({ 
-    email, 
-    password,
-}) => jwt.sign({ email, password }, TOKEN_SECRET, jwtConfig);
+const generateToken = (payload) => jwt.sign(payload, TOKEN_SECRET, jwtConfig);
 
 const authenticateToken = async (token) => {
     if (!token) throw new Error('Missing token');
