@@ -17,7 +17,8 @@ const authenticateToken = (token) => {
         const decryptedData = jwt.verify(token, TOKEN_SECRET);
         return decryptedData;
     } catch (error) {
-        throw new Error('Token malformed');
+        return null;
+        // throw new Error({ message: 'Expired or invalid token' });
     }
 };
 
