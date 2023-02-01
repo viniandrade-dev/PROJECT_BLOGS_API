@@ -17,9 +17,10 @@ const authenticateNewUser = async (req, res) => {
     }
 };
 
-const getAllUsers = async (_req, res) => {
+const getAllUsers = async (req, res) => {
     const users = await authUserService.getAllUsers();
-    
+    const { user: { id } } = req.headers;
+    console.log(`o valor id é ${id}`);
     return res.status(200).json(users);
 };
 

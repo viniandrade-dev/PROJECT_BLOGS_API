@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
+            autoIncrement: true,
         },
         title: DataTypes.STRING,
         content: DataTypes.STRING,
@@ -22,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
 
     BlogPost.associate = (models) => {
         BlogPost.belongsTo(models.User,
-            { foreignKey: 'userId', as: 'users' });
+            { foreignKey: 'userId', as: 'user' });
     };
 
     return BlogPost;
