@@ -6,8 +6,6 @@ const createBlogPost = async (req, res) => {
     const newBlogPost = await blogPostService
     .createBlogPost({ title, content, userId, categoryIds });
 
-    console.log(newBlogPost);
-
     return res.status(201).json(newBlogPost);
 };
 
