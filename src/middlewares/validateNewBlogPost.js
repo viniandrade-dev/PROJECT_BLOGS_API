@@ -10,8 +10,6 @@ const validateNewBlogPost = async (req, res, next) => {
 
     const categories = await getCategoriesByIds(categoryIds);
 
-    console.log(categories);
-
    if (categories.length !== categoryIds.length) {
     return res.status(400).json({ message: 'one or more "categoryIds" not found' });
    }
