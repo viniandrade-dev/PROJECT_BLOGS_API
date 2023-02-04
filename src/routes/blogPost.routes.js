@@ -9,6 +9,7 @@ const router = express.Router();
 
 router.post('/', 
 authenticateTokenMiddleware, validateNewBlogPost, blogPostController.createBlogPost);
+router.get('/search', authenticateTokenMiddleware, blogPostController.getBlogPostByTerm);
 router.get('/', authenticateTokenMiddleware, blogPostController.getAllBlogPosts);
 router.get('/:id', authenticateTokenMiddleware, blogPostController.getBlogPostById);
 router.put('/:id', 

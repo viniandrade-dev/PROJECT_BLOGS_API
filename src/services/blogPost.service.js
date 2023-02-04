@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { BlogPost, PostCategory, User, Category } = require('../models');
 
 const createBlogPost = async ({ title, content, userId, published, updated, categoryIds }) => {
@@ -5,9 +6,9 @@ const createBlogPost = async ({ title, content, userId, published, updated, cate
 
     const { id: postId } = newBlogPost.dataValues;
 
-    categoryIds.forEach(async (categoryId) => { 
+    await Promise.all(categoryIds.map(async (categoryId) => {
         await PostCategory.create({ postId, categoryId });
-    });
+    }));
 
     return newBlogPost;
 };
@@ -49,10 +50,33 @@ const deleteBlogPost = async (id) => {
     return deletedBlogPost;
 };
 
+const getBlogPostByTerm = async (q) => {
+    if (!q) {
+        const blogPosts = await getAllBlogPosts();
+        return blogPosts;
+    }
+    
+    const blogPosts = await BlogPost.findAll({
+        where: { [Op.or]: 
+            [{ title: { [Op.substring]: q } }, { content: { [Op.substring]: q } }] },
+        include: [
+            { model: User, as: 'user', attributes: { exclude: ['password'] } }, 
+            { model: Category, as: 'categories', through: { attributes: [] } },
+        ],
+    });
+
+    if (!blogPosts) {
+        return [];
+    }
+
+    return blogPosts;
+};
+
 module.exports = {
     createBlogPost,
     getAllBlogPosts,
     getBlogPostById,
     updateBlogPost,
     deleteBlogPost,
+    getBlogPostByTerm,
 };
