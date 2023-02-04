@@ -26,9 +26,16 @@ const getUserById = async (id) => {
     return user;
 };
 
+const deleteMe = async (id) => {
+    const deletedMe = await User.destroy({ where: { id } });
+
+    return deletedMe;
+};
+
 module.exports = {
     authenticateNewUser,
     findUserByEmail,
     getAllUsers,
     getUserById,
+    deleteMe,
 };
