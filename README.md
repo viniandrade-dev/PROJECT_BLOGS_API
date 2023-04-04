@@ -27,6 +27,7 @@ Projeto desenvolvido enquanto aluno da Trybe para praticar conceitos do ORM Sequ
 2. Para rodar localmente, é necessário o Node 16+ e o MySQL 8+ instalado e executar o comando `npm run dev` na raíz do projeto. 
 3. Para rodar via docker, é preciso ter o docker-compose v1.29 ou mais instalado e executar o comando `docker-compose up -d` na raíz do projeto.
 4. Sinta livre para explorar o código :grin:
+- PS: é recomendável ter a extensão thunderclient instalada em seu vscode para melhor visualização das requisições.
 
 ## Ambições futuras
 
