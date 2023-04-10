@@ -19,12 +19,12 @@ Projeto desenvolvido enquanto aluno da Trybe para praticar conceitos do ORM Sequ
 
 ## Sobre as funcionalidades desenvolvidas por mim
 - Desenvolvi models e migration para realizar o CRUD do cadastro e login de um usuário junto ao desenvolvimento de endpoints. Dessa forma é possível realizar um login caso já tenha cadastro, realizar cadastro, criar um perfil e realizar buscas e postagens de posts, etc.
-- Por exemplo, um login é realizado na rota /login pelo método HTTP post. As rotas existentes constam em ./src/routeans/, estas por sua vez quando recebem alguma requisição do cliente executam suas repesctivas funcionalidas desenvolvidas em ./src/controllers/ e ./src/services/. No entanto, já validações de dados para cada rota, sendo encontradas em ./src/middlwares.
+- Por exemplo, um login é realizado na rota /login pelo método HTTP post. As rotas existentes constam em ./src/routes/, estas por sua vez quando recebem alguma requisição do cliente executam suas repesctivas funcionalidas desenvolvidas em ./src/controllers/ e ./src/services/. No entanto, as validações de dados para cada rota, são encontradas em ./src/middlwares.
 
 ## Como iniciar o projeto em sua máquina
 
 1. Faça o clone do repositório e rode o `npm install`.
-2. Para rodar localmente, é necessário o Node 16+ e o MySQL 8+ instalado e executar o comando `npm run dev` na raíz do projeto. 
+2. Para rodar localmente, é necessário o Node 16+ e o MySQL 8+ instalado e executar o comando `npm run prestart` e depois `npm start` na raíz do projeto. 
 3. Para rodar via docker, é preciso ter o docker-compose v1.29 ou mais instalado e executar o comando `docker-compose up -d` na raíz do projeto.
 4. Sinta livre para explorar o código :grin:
 - PS: é recomendável ter a extensão thunderclient instalada em seu vscode para melhor visualização das requisições.
