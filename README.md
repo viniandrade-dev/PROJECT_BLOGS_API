@@ -38,3 +38,11 @@ Projeto desenvolvido enquanto aluno da Trybe para praticar conceitos do ORM Sequ
 
 Foi um projeto muito divertido de desenvolver, onde pude aprender mais ainda, fazer pesquisas, melhorar minhas hard skills e aprender coisas novas!
 
+## Technologias e Ferramentas
+<div>
+    <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="mysql"/>
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="nodejs"/>
+    <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" alt="docker"/>
+    <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express"/>
+    <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white" alt="sequelize"/>
+</div>
